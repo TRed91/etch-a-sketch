@@ -1,0 +1,19 @@
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 320px;
+    height: 320px;
+    
+}
+
+div > div {
+    box-sizing: border-box;
+    width: 20px;
+    height: 20px;
+    border: solid 1px;
+    flex: auto
+}
+
+
+
+

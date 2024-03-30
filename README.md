@@ -2,7 +2,7 @@
 assignment for the oden project
 
 1.
-create 16x16 grid of quare divs using javascript 
+create 16x16 grid of square divs using javascript 
 within a div container
 
 use flexbox to display divs as a grid
