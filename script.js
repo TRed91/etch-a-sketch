@@ -6,4 +6,8 @@ for (let i = 0; i < (16*16); i++) {
     divContainer.appendChild(gridDiv);
 }
 
+divContainer.addEventListener("mouseover", (event) => {
+    let target = event.target;
+    target.setAttribute("style", "background: black")
+});
 
