@@ -1,17 +1,16 @@
 #container {
+    margin-top: 50px;
     display: flex;
     flex-wrap: wrap;
-    width: 320px;
-    height: 320px;
+    align-items: center;
+    justify-content: center;
+    width: 960px;
+    height: 960px;
     
 }
 
 div > div {
-    box-sizing: border-box;
-    width: 20px;
-    height: 20px;
-    border: solid 1px;
-    flex: auto
+  
 }
 
 

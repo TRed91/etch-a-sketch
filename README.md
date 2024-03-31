@@ -11,7 +11,7 @@ use flexbox to display divs as a grid
 setup hover effect so that the grid divs change color
 when the mouse hovers over them leaving a pixelated trail
     HINT: "Hovering" happens when mouse enters a div and
-            end when it leaves. You can setup event listeners
+            ends when it leaves. You can setup event listeners
             for both events
 
             some ways to change the color of the divs is
