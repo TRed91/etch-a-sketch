@@ -3,29 +3,32 @@ const btn = document.querySelector("#btn");
 let numberOfSquares = 16;
 
 btn.addEventListener("click", () => {
-
     divContainer.style.background = "white";
     while (divContainer.firstChild) {
         divContainer.firstChild.remove();
     }
-
     let input = Number(prompt("Select number of squares per side", ""));
-    
     if (input >= 16 && input <= 100) {
-        
-       numberOfSquares = input;
+        numberOfSquares = input;
        drawGrid();
        } else {
         alert("Choose a number between 16 and 100!");
     }
-
     const square = document.getElementsByClassName("square");
     for (let j = 0; j < square.length; j++)
         square[j].addEventListener("mouseover", (event) => {
             let target = event.target;
-            target.style.backgroundColor = "black";
+            target.style.backgroundColor = randomRBG();
         });
 });
+
+function randomRBG () {
+    let red = Math.floor(Math.random() * 256);
+    let blue = Math.floor(Math.random() * 256);
+    let green = Math.floor(Math.random() * 256);
+    let bgColor = "rgb("+ red +", "+ blue +", "+ green +")";
+    return bgColor;
+}
 
 // draw grid
 function drawGrid (){
