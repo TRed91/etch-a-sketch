@@ -2,6 +2,15 @@ const divContainer = document.querySelector("#container");
 const btn = document.querySelector("#btn");
 let numberOfSquares = 16;
 
+drawGrid();
+const square = document.getElementsByClassName("square");
+    for (let j = 0; j < square.length; j++)
+        square[j].addEventListener("mouseover", (event) => {
+            let target = event.target;
+            target.style.backgroundColor = randomRBG();
+            target.style.opacity - 0.1;
+        });
+
 btn.addEventListener("click", () => {
     divContainer.style.background = "white";
     while (divContainer.firstChild) {
