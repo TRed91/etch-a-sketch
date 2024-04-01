@@ -1,18 +1,35 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #5f6fcc;
+}
+
 #container {
     margin-top: 50px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    width: 960px;
-    height: 960px;
+    width: 480px;
+    height: 480px;
     border: solid 2px;
+    background-color: aliceblue;
     
 }
 
-div > div {
-  
+button {
+    font-size: 25px;
+    border-radius: 5px;
+    background-color: #d4c468;
 }
+
+h1 {
+    color: #f0e6ac;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 50px;
+}
+
 
 
 

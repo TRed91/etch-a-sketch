@@ -19,6 +19,7 @@ btn.addEventListener("click", () => {
         square[j].addEventListener("mouseover", (event) => {
             let target = event.target;
             target.style.backgroundColor = randomRBG();
+            target.style.opacity - 0.1;
         });
 });
 
@@ -35,8 +36,8 @@ function drawGrid (){
 for (let i = 0; i < (numberOfSquares ** 2); i++) {
     let gridDiv = document.createElement("div");
     gridDiv.setAttribute("class", "square");
-    gridDiv.style.width = Math.ceil(960/numberOfSquares)+"px";
-    gridDiv.style.height = Math.ceil(960/numberOfSquares)+"px";
+    gridDiv.style.width = Math.ceil(480/numberOfSquares)+"px";
+    gridDiv.style.height = Math.ceil(480/numberOfSquares)+"px";
     divContainer.appendChild(gridDiv);
 }
 }
