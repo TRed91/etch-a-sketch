@@ -8,11 +8,11 @@ const square = document.getElementsByClassName("square");
         square[j].addEventListener("mouseover", (event) => {
             let target = event.target;
             target.style.backgroundColor = randomRBG();
-            target.style.opacity - 0.1;
+            reduceOpacity(target);
         });
 
 btn.addEventListener("click", () => {
-    divContainer.style.background = "white";
+    divContainer.style.background = "black";
     while (divContainer.firstChild) {
         divContainer.firstChild.remove();
     }
@@ -28,7 +28,7 @@ btn.addEventListener("click", () => {
         square[j].addEventListener("mouseover", (event) => {
             let target = event.target;
             target.style.backgroundColor = randomRBG();
-            target.style.opacity - 0.1;
+            reduceOpacity(target);
         });
 });
 
@@ -40,15 +40,33 @@ function randomRBG () {
     return bgColor;
 }
 
+function reduceOpacity (target) {
+    switch (target.style.opacity) {
+        case "1": return target.style.opacity = "0.9"; break;
+        case "0.9": return target.style.opacity = "0.8"; break;
+        case "0.8": return target.style.opacity = "0.7"; break;
+        case "0.7": return target.style.opacity = "0.6"; break;
+        case "0.6": return target.style.opacity = "0.5"; break;
+        case "0.5": return target.style.opacity = "0.4"; break;
+        case "0.4": return target.style.opacity = "0.3"; break;
+        case "0.3": return target.style.opacity = "0.2"; break;
+        case "0.2": return target.style.opacity = "0.1"; break;
+        case "0.1": return target.style.opacity = "0.0"; break;
+        default: return target.style.opacity = "0.0";
+    }
+};
+
 // draw grid
 function drawGrid (){
-for (let i = 0; i < (numberOfSquares ** 2); i++) {
-    let gridDiv = document.createElement("div");
-    gridDiv.setAttribute("class", "square");
-    gridDiv.style.width = Math.ceil(480/numberOfSquares)+"px";
-    gridDiv.style.height = Math.ceil(480/numberOfSquares)+"px";
-    divContainer.appendChild(gridDiv);
-}
+    for (let i = 0; i < (numberOfSquares ** 2); i++) {
+        let gridDiv = document.createElement("div");
+        gridDiv.setAttribute("class", "square");
+        gridDiv.style.background = "white";
+        gridDiv.style.opacity = "1";
+        gridDiv.style.width = Math.ceil(480/numberOfSquares)+"px";
+        gridDiv.style.height = Math.ceil(480/numberOfSquares)+"px";
+        divContainer.appendChild(gridDiv);
+    }
 }
 
 
