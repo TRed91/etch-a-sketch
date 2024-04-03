@@ -2,8 +2,8 @@ const divContainer = document.querySelector("#container");
 const btn = document.querySelector("#btn");
 let numberOfSquares = 16;
 
-drawGrid();
-const square = document.getElementsByClassName("square");
+drawGrid(numberOfSquares);
+const square = document.querySelectorAll(".square");
     for (let j = 0; j < square.length; j++)
         square[j].addEventListener("mouseover", (event) => {
             let target = event.target;
@@ -19,11 +19,11 @@ btn.addEventListener("click", () => {
     let input = Number(prompt("Select number of squares per side", ""));
     if (input >= 16 && input <= 100) {
         numberOfSquares = input;
-       drawGrid();
+       drawGrid(numberOfSquares);
        } else {
         alert("Choose a number between 16 and 100!");
     }
-    const square = document.getElementsByClassName("square");
+    const square = document.querySelectorAll(".square");
     for (let j = 0; j < square.length; j++)
         square[j].addEventListener("mouseover", (event) => {
             let target = event.target;
@@ -56,17 +56,27 @@ function reduceOpacity (target) {
     }
 };
 
-// draw grid
-function drawGrid (){
-    for (let i = 0; i < (numberOfSquares ** 2); i++) {
-        let gridDiv = document.createElement("div");
-        gridDiv.setAttribute("class", "square");
-        gridDiv.style.background = "white";
-        gridDiv.style.opacity = "1";
-        gridDiv.style.width = Math.ceil(480/numberOfSquares)+"px";
-        gridDiv.style.height = Math.ceil(480/numberOfSquares)+"px";
-        divContainer.appendChild(gridDiv);
+function drawGrid (numberOfSquares) {
+    
+    for (let i = 0; i < numberOfSquares; i++){
+        let row = document.createElement("div");
+        row.setAttribute("class", "row");
+        divContainer.appendChild(row);
     }
+
+    const rowContainers = document.querySelectorAll(".row");
+
+    rowContainers.forEach( (e) => {
+        for (let i = 0; i < numberOfSquares; i++) {
+            let column = document.createElement("div");
+            column.setAttribute("class", "square");
+            column.style.background = "white";
+            column.style.opacity = "1";
+            column.style.width = 480/numberOfSquares + "px";
+            column.style.height = column.style.width;
+            e.appendChild(column);
+        }
+    });
 }
 
 
